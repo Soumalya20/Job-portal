@@ -1,0 +1,50 @@
+<style>
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .sidebar a {
+    padding: 8px 8px 8px 8px;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-size: 25px;
+    color: #c4c4c4;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidebar a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+  }
+
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  @media screen and (max-height: 450px) {
+  .sidenbar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+</style>
+<div id="mySidenav" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="{% url 'hrdash' %}"><i class="fas fa-user"></i> Profile</a>
+  <a href="{% url 'postjob' %}"><i class="fas fa-plus-circle"></i> New Job Post</a>
+  <button class="logout-button"><a href="{% url 'logout' %}">Logout</a></button>
+</div>
+<span style="font-size:30px;cursor:pointer;color: rgb(255, 255, 255); position: absolute;top: 20px;left: 20px;background-color: transparent;border: none;cursor: pointer;padding: 10px;
+;" onclick="openNav()">&#9776; </span>
